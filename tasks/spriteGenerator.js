@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 
             files.forEach(function(srcFile) {
                 var data = grunt.file.read(options.baseUrl + srcFile);
-                var references = data.match(imageRegex);
+                var references = data.match(imageRegex) || [];
 
                 references.forEach(function(file) {
                     // Exit if it contains a http/https
